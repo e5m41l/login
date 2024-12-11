@@ -49,35 +49,47 @@
     <div class="position-absolute top-50 start-50 translate-middle">
         <div class="wrapper">
             <form action="register.php" enctype="multipart/form-data" method="post" class="shadow-lg p-3 mb-5 bg-body-tertiary rounded">
-                <h2>Register Now</h2>
                 <?php
-                    if (isset($message)) {
-                        foreach ($message as $message) {
-                            echo '<div class="alert alert-danger" role="alert">'.$message.'</div>';
-                        }
-                    }
+                    // if ($user['image'] == '') {
+                    //     echo '<img style="border-radius: 50%; padding: 10px;" src="images/profile.webp" class="card-img-top" alt="...">';
+                    // } else {
+                    //     echo '<img style="border-radius: 50%; padding: 10px;" src="/uploaded_imgs/'.$user['image'].'" class="card-img-top" alt="could not load image">';
+                    // }
                 ?>
-                <div class="mb-3">
-                    <input name="username" placeholder="enter username" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <img style="border-radius: 50%; padding: 10px; width:250px;" src="images/profile.webp" class="card-img-top" alt="...">
+                <div class="row">
+                    <div class="col">
+                        <input name="username" placeholder="enter username" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="col">
+                    <input required name="prev-password" placeholder="your previous password" type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <input name="email" placeholder="enter email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div class="row">
+                    <div class="col">
+                        <input name="email" placeholder="enter email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="col">
+                        <input name="new-password" placeholder="enter new password" type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <input required name="password" placeholder="enter password" type="password" class="form-control" id="exampleInputPassword1">
-                </div>
-                <div class="mb-3">
-                    <input required name="cpassword" placeholder="confirm password" type="password" class="form-control" id="exampleInputPassword1">
-                </div>
-                <div class="mb-3">
+                <!-- third -->
+                <div class="row">
+                    <div class="col">
                     <input name="image" accept="image/jpg, image/jpeg, image/png" type="file" class="form-control" id="inputGroupFile02">
+                    </div>
+                    <div class="col">
+                        <input name="cpassword" placeholder="confirm new password" type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
                 </div>
+
                 <div class="d-grid gap-2">
-                    <button name="add" value="register" type="submit" class="btn btn-primary">Register Now</button>
+                    <button name="add" value="update" type="submit" class="btn btn-primary m-2">Update Profile</button>
                 </div>
-                <p class="lead">
-                    Already have an account?<a class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="login.php"> login now</a>
-                </p>
+
+                <div class="d-grid gap-2">
+                    <button name="add" value="register" type="submit" class="btn btn-warning m-2">Go Back</button>
+                </div>
             </form>
         </div>
     </div>
